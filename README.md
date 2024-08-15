@@ -40,7 +40,13 @@ have no other recommendations for how you should obtain bazel on Mac.
 
 ## Cargo
 
-TODO
+```
+curl https://sh.rustup.rs -sSf | sh
+```
+
+[Deets].
+
+[Deets]: https://doc.rust-lang.org/cargo/getting-started/installation.html
 
 
 # Demo
