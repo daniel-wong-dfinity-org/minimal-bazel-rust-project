@@ -5,7 +5,8 @@ A practical solution needs a way to get libraries from crates.io. This supports
 that.
 
 We might be implicitly assuming that you know cargo and bazel separately, but
-you maybe do not know how to make them coexist.
+you maybe do not know how to make them coexist. (Truth be told, I am only dimly
+aware of how to make them play nice together.)
 
 
 # Prerequisites
@@ -82,9 +83,9 @@ this information is buried in a big fat hay stack, like typical useful
 information in error output).
 
 
-# Usage
+# Starting Your Own Project
 
-You can use this repo to get started with your own project as follows:
+Here is one way to do that:
 
 1. Create a [new repository in GitHub][create].
 

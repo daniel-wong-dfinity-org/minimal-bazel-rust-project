@@ -5,17 +5,17 @@ use async_trait::{
 };
 
 #[async_trait]
-trait T {}
+trait Greet {
+    fn greet(&self);
+}
 
 struct S {}
 
-impl S {
+impl Greet for S {
     fn greet(&self) {
-        println!("Hello, bazel!");
+        println!("Hello, bazel and crates.io!");
     }
 }
-
-impl T for S {}
 
 fn main() {
     let s = S {};
