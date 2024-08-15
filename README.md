@@ -21,7 +21,7 @@ REPO=git@github.com:hacker/new_repo.git
 
 ```
 git clone git@github.com:daniel-wong-dfinity-org/minimal-bazel-rust-project.git
-git remote set-url origin $ADDRESS_OF_YOUR_REPO
+git remote set-url origin $REPO
 git push -u origin main
 ```
 
