@@ -51,6 +51,8 @@ curl https://sh.rustup.rs -sSf | sh
 
 # Demo
 
+Once you clone this repo, and `cd` into it,
+
 ```
 CARGO_BAZEL_REPIN=true bazel run //foo:hello_bazel
 ```
@@ -58,12 +60,11 @@ CARGO_BAZEL_REPIN=true bazel run //foo:hello_bazel
 ## What Is This `CARGO_BAZEL_REPIN`??
 
 To be perfectly honest, I'm not super clear on what `CARGO_BAZEL_REPIN` does,
-but my understanding is that it has something to do with using third-party
-libraries (from crates.io).
+but it has something to do with using third-party libraries (from crates.io).
 
-I think you maybeprobably always want bazel to see `CARGO_BAZEL_REPIN=true`. If
-you decide that's what you want, you should probably put something like the
-following in your .bashrc (or equivalent):
+I think you maybeprobably want `bazel` to always see `CARGO_BAZEL_REPIN=true`.
+If you agree, you should probably put something like the following in your
+.bashrc (or equivalent):
 
 ```
 export CARGO_BAZEL_REPIN=true
@@ -72,11 +73,13 @@ export CARGO_BAZEL_REPIN=true
 (Don't omit the `export` in front!)
 
 If you do this, then you will not need to every time prefix your `bazel`
-commands with `CARGO_BAZEL_REPIN=true` (like we did in the demo).
+commands with `CARGO_BAZEL_REPIN=true` (like we did in the demo). Instead, your
+`bazel` commands will look like normal `bazel` commands and have less spam.
 
-Not sure what bad things might happen if bazel always sees
-`CARGO_BAZEL_REPIN=true`. It might be just that it runs slower. Other than that,
-it seems to do no harm.
+Not sure what bad things might happen if `bazel` always sees
+`CARGO_BAZEL_REPIN=true`. I mean, presumably, there is _some_ reason it doesn't
+behave that way by default. The reason might be just that it runs slower. Other
+than that, it seems to do no harm.
 
 What I do know is that if bazel does not see `CARGO_BAZEL_REPIN=true`, then, in
 practice, it is inevitable that you will run into problems whenever you start
@@ -84,8 +87,8 @@ practice, it is inevitable that you will run into problems whenever you start
 (seems unrealistic), then maybe you can forget about `CARGO_BAZEL_REPIN`.
 
 The good news is that if you forget, the output will remind you about this (but
-bazel will "kindly" bury this useful information in a hay stack for you, where
-useful error output typically finds itself.)
+bazel will "kindly" bury this useful information in a hay stack for you, the
+native habitat of useful error output.)
 
 
 # Starting Your Own Project
@@ -117,8 +120,14 @@ your local repo now points to the new GitHub repo you created in step 1.
 
 4. Optional: You probably want to replace this README with information about your project.
 
+5. Optional: If you do not want to inherit the history of this repo, you can
+probably use some incantation based on `git rebase -i` to squash all commits,
+and give the one commit a new commit message, like "Starting project $X. The
+plan is to write it in Rust, and build it using Bazel.". If you are feeling
+generous, you can link back to this repo.
 
-# Versions In Use
+
+# Versions in Use
 
 We are using the latest stuff as of Aug, 2024. More precisely,
 
