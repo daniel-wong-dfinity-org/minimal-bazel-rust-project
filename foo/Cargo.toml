@@ -1,0 +1,7 @@
+[package]
+name = "foo"
+version = "0.0.1" # TODO { workspace = true }
+edition = "2021" # TODO { workspace = true }
+
+[dependencies]
+async-trait = "0.1.81"
