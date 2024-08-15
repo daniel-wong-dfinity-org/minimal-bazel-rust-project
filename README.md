@@ -61,8 +61,9 @@ To be perfectly honest, I'm not super clear on what `CARGO_BAZEL_REPIN` does,
 but my understanding is that it has something to do with using third-party
 libraries (from crates.io).
 
-I think you maybeprobably always want CARGO_BAZEL_REPIN=true. If so, you should
-probably put something like the following in your .bashrc, or equivalent:
+I think you maybeprobably always want bazel to see `CARGO_BAZEL_REPIN=true`. If
+you decide that's what you want, you should probably put something like the
+following in your .bashrc (or equivalent):
 
 ```
 export CARGO_BAZEL_REPIN=true
@@ -70,23 +71,21 @@ export CARGO_BAZEL_REPIN=true
 
 (Don't omit the `export` in front!)
 
-Not sure what bad things might happen if you always set `CARGO_BAZEL_REPIN`
-(either by prefixing, or by adding the suggested line to your `.bashrc`). It
-might be that your bazel commands run more slowly.
+If you do this, then you will not need to every time prefix your `bazel`
+commands with `CARGO_BAZEL_REPIN=true` (like we did in the demo).
 
-What I do know is that if you simply do
+Not sure what bad things might happen if bazel always sees
+`CARGO_BAZEL_REPIN=true`. It might be just that it runs slower. Other than that,
+it seems to do no harm.
 
-```
-bazel run //foo:hello_bazel
-```
+What I do know is that if bazel does not see `CARGO_BAZEL_REPIN=true`, then, in
+practice, it is inevitable that you will run into problems whenever you start
+(newly) depending on a(nother) library from crates.io. If you never do that
+(seems unrealistic), then maybe you can forget about `CARGO_BAZEL_REPIN`.
 
-you will run into problems if you start (newly) depending on a library from
-crates.io. If you never do that (seems unrealistic), then maybe you can forget
-about `CARGO_BAZEL_REPIN`.
-
-The good thing is that if you forget, the output will remind you about this (but
-this information is buried in a big fat hay stack, like typical useful
-information in error output).
+The good news is that if you forget, the output will remind you about this (but
+bazel will "kindly" bury this useful information in a hay stack for you, where
+useful error output typically finds itself.)
 
 
 # Starting Your Own Project
