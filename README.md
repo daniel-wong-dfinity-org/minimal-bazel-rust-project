@@ -26,8 +26,8 @@ git push -u origin main
 ```
 
 The second command in this step changes where you push and pull changes to and
-from. Instead of pointing to this repo, your local repo now points to the new
-repo you created in step 1.
+from. Instead of pointing to the repo where you got this minimal set of files,
+your local repo now points to the new GitHub repo you created in step 1.
 
 4. Optional: You probably want to replace this README with information about your project.
 
